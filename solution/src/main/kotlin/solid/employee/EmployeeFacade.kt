@@ -14,8 +14,8 @@ class EmployeeFacade @Inject constructor(
     @CashPaymentQualifier private val cashPayment: Payment,
 ) {
 
-    fun payEmployeeSalary(employee: Employee) {
-        when (employee.paymentType) {
+    fun payEmployeeSalary(employee: Employee, selectedPaymentType: PaymentType) {
+        when (selectedPaymentType) {
             CHECK -> checkPayment
             TRANSFER -> transferPayment
             CREDIT_CARD -> creditCardPayment
